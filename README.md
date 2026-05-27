@@ -33,18 +33,36 @@ Baidu Cloud: XXX.
 ## Knowledge Distillation
 
 ## Document Localization
+
 ### Requirements
-- Python 3.9.12
-- PyTorch 2.0.1
-- CUDA 12.2
-### Pretrained Weights
-Baidu Cloud: XXX.
-### Usage
-#### 1)Train
-```train
-python train_net.py
+
+This project follows the environment setup of the original Mask2Former based implementation. The environment was tested with the following configuration:
+
+- Python 3.8
+- PyTorch 1.9.0 with CUDA 11.1
+- torchvision 0.10.0 with CUDA 11.1
+- Detectron2 compatible with PyTorch 1.9 and CUDA 11.1
+
+Please install the remaining dependencies using:
+
+```bash
+pip install -r requirements.txt
 ```
-#### 2)Test with pretrained weights
-```test
+
+### Pretrained Weights
+
+Baidu Cloud: XXX.
+
+### Usage
+
+#### 1. Training
+
+```bash
+python train_net.py
+```
+
+#### 2. Testing with pretrained weights
+
+```bash
 python demo/demo3.py
 ```
