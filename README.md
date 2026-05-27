@@ -32,6 +32,25 @@ Baidu Cloud: XXX.
 
 ## Knowledge Distillation
 
+### Requirements
+
+This project is built upon SAM 3 and DINOv3. Please install the corresponding environments according to their official repositories:
+
+- SAM 3: https://github.com/facebookresearch/sam3
+- DINOv3: https://github.com/facebookresearch/dinov3
+
+### Pretrained Weights
+
+Baidu Cloud: XXX.
+
+### Usage
+
+#### 1. Training
+
+```bash
+CUDA_VISIBLE_DEVICES=0 torchrun --nproc_per_node=1 --master_port 25641 main_yzh.py --distributed --world_size 1 --epochs 100 --no-label --distillation-beta 1 --w-sample 0.1 --w-patch 4 --w-rand 0.2 --K 192 --s-id 0 1 2 3 4 5 --t-id 0 3 7 22 27 31 --model sam_vit_s --input-size 1024 --drop-path 0 --sched cosine_restart --warmup-epochs 1 --teacher-path /dfs/data/lyh/sh_kd/sam_vit_h_4b8939.pth --distillation-type mse --distillation-alpha 1 --data-path /dfs/data/dataset/v3_ag2 --data-set SAM --output_dir /dfs/data/lyh/sh_kd/output/sam3_dinov3_1024_v3_ag2_dwtl_b32_0227 --batch-size 32 --teacher-model sam3_vit+dinov3_convnext
+```
+
 ## Document Localization
 
 ### Requirements
