@@ -1,6 +1,8 @@
 <p align="center">
 
   <h1 align="center">RDLNet++: Frequency-Decoupled Multi-Teacher Distillation for Real-World Document Localization</h1>
+  
+![SFMFusion](Framework.png)
 
 **RDLNet++** is an enhanced network for real-world document localization. The project aims to accurately detect document regions in challenging mobile-captured images, including complex backgrounds, diverse document categories, low contrast, shadows, occlusion, and perspective distortion. RDLNet++ introduces a Frequency-Decoupled Multi-Teacher Distillation strategy to transfer knowledge from large scale vision foundation models to a lightweight encoder. It further refines feature representations through a transformer decoder and performs precise document localization using dedicated classification, mask, and corner point prediction branches, together with a Boundary Constraint Strategy. This repository also provides the **RWMD-Extended** dataset, an expanded version of the Real-World Mobile Document dataset. RWMD-Extended contains more diverse document categories and challenging real-world scenarios, supporting more rigorous evaluation of document localization methods. Experiments on multiple datasets show that RDLNet++ achieves stable and competitive localization performance while maintaining an efficient model design. 
 
