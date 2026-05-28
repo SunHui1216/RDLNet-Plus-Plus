@@ -2,7 +2,7 @@
 
   <h1 align="center">RDLNet++: Frequency-Decoupled Multi-Teacher Distillation for Real-World Document Localization</h1>
   
-![RDLNet++](Framework.pdf)
+![RDLNet++](Framework.png)
 
 **RDLNet++** is an enhanced network for real-world document localization. The project aims to accurately detect document regions in challenging mobile-captured images, including complex backgrounds, diverse document categories, low contrast, shadows, occlusion, and perspective distortion. RDLNet++ introduces a Frequency-Decoupled Multi-Teacher Distillation strategy to transfer knowledge from large scale vision foundation models to a lightweight encoder. It further refines feature representations through a transformer decoder and performs precise document localization using dedicated classification, mask, and corner point prediction branches, together with a Boundary Constraint Strategy. This repository also provides the **RWMD-Extended** dataset, an expanded version of the Real-World Mobile Document dataset. RWMD-Extended contains more diverse document categories and challenging real-world scenarios, supporting more rigorous evaluation of document localization methods. Experiments on multiple datasets show that RDLNet++ achieves stable and competitive localization performance while maintaining an efficient model design. 
 
@@ -27,6 +27,7 @@ RWMD-Extended is an expanded real-world mobile document dataset containing 2,526
   - Extensive experiments on multiple public benchmarks demonstrate that our method achieves higher Jaccard Index scores than most state-of-the-art methods.
     
 ## RWMD-Extended Dataset
+![RWMD-Extended](Dataset.png)
 RWMD-Extended is an expanded version of the Real-World Mobile Document (RWMD) dataset. It contains 2,526 mobile-captured images from real-world environments, including 517 newly added images and eleven document categories.
 The dataset includes challenging cases such as low contrast, complex illumination, cluttered backgrounds, and ambiguous document boundaries. Each image provides instance-level segmentation masks, category labels, and corner point coordinates for document localization research.
 
