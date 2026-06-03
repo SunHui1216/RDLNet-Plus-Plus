@@ -1,6 +1,4 @@
-<p align="center">
-
-  <h1 align="center">RDLNet++: Frequency-Decoupled Multi-Teacher Distillation for Real-World Document Localization</h1>
+<h1 align="center">RDLNet++: Frequency-Decoupled Multi-Teacher Distillation for Real-World Document Localization</h1>
   
 <p align="center">
   <img src="Framework.png" alt="RDLNet++" width="800">
@@ -8,27 +6,30 @@
 
 **RDLNet++** is an enhanced network for real-world document localization. The project aims to accurately detect document regions in challenging mobile-captured images, including complex backgrounds, diverse document categories, low contrast, shadows, occlusion, and perspective distortion. RDLNet++ introduces a Frequency-Decoupled Multi-Teacher Distillation strategy to transfer knowledge from large scale vision foundation models to a lightweight encoder. It further refines feature representations through a transformer decoder and performs precise document localization using dedicated classification, mask, and corner point prediction branches, together with a Boundary Constraint Strategy. This repository also provides the **RWMD-Extended** dataset, an expanded version of the Real-World Mobile Document dataset. RWMD-Extended contains more diverse document categories and challenging real-world scenarios, supporting more rigorous evaluation of document localization methods. Experiments on multiple datasets show that RDLNet++ achieves stable and competitive localization performance while maintaining an efficient model design. 
 
-## News
+## News 📢
 
-## Table of Contents
+- Code, dataset, and pretrained weights have been released.
+
+## Table of Contents 📑
 - [Introduction](#introduction)
 - [Contributions](#contributions)
 - [RWMD-Extended Dataset](#rwmd-extended-dataset)
 - [Knowledge Distillation](#knowledge-distillation)
 - [Document Localization](#document-localization)
+- [Citation](#citation)
 
-## Introduction
+## Introduction 🌟
 RDLNet++ is a lightweight real-world document localization network that uses Frequency-Decoupled Multi-Teacher Distillation, a transformer decoder, dedicated output branches, and a Boundary Constraint Strategy to achieve accurate and efficient document localization.
 
 RWMD-Extended is an expanded real-world mobile document dataset containing 2,526 images across eleven document categories, with challenging cases such as low contrast, complex illumination, cluttered backgrounds, and ambiguous document boundaries.
 
-## Contributions
+## Contributions ✨
   - We propose a novel Frequency-Decoupled Multi-Teacher Distillation (FD-MTD), along with detailed explanations and visualization analyses.
   - We propose a triple-branch decoder, which is improved by introducing the Boundary Constraint Strategy (BCS).
   - We propose a RWMD-Extended dataset by incorporating more challenging scenarios to the RWMD dataset.
   - Extensive experiments on multiple public benchmarks demonstrate that our method achieves higher Jaccard Index scores than most state-of-the-art methods.
     
-## RWMD-Extended Dataset
+## RWMD-Extended Dataset 🖼️
 <p align="center">
   <img src="Dataset.png" alt="RWMD-Extended" width="700">
 </p>
@@ -37,7 +38,7 @@ The dataset includes challenging cases such as low contrast, complex illuminatio
 
 Google Drive: [RWMD-Extended](https://drive.google.com/file/d/1hkHizn_pWpdjDnXO0MKrxfBWgRbcbzAJ/view?usp=sharing).
 
-## Knowledge Distillation
+## Knowledge Distillation 📝
 
 ### Requirements
 
@@ -50,11 +51,13 @@ This project is built upon SAM 3 and DINOv3. Please install the corresponding en
 
 #### 1. Training
 
+The following command trains the student encoder using FD-MTD with SAM 3 and DINOv3 as teacher models. Please update the teacher checkpoint path, dataset path, and output directory according to your local environment.
+
 ```bash
 CUDA_VISIBLE_DEVICES=0 torchrun --nproc_per_node=1 --master_port 25641 main.py --distributed --world_size 1 --epochs 100 --no-label --distillation-beta 1 --w-sample 0.1 --w-patch 4 --w-rand 0.2 --K 192 --s-id 0 1 2 3 4 5 --t-id 0 3 7 22 27 31 --model sam_vit_s --input-size 1024 --drop-path 0 --sched cosine_restart --warmup-epochs 1 --teacher-path /to/your/teacher/path/sam_vit_h_4b8939.pth --distillation-type mse --distillation-alpha 1 --data-path /to/your/dataset/path --data-set SAM --output_dir /to/your/output/path --batch-size 32 --teacher-model sam3_vit+dinov3_convnext
 ```
 
-## Document Localization
+## Document Localization 📝
 
 ### Requirements
 
@@ -71,11 +74,15 @@ Please install the remaining dependencies using:
 pip install -r requirements.txt
 ```
 
-### Pretrained Student Weights and Document Localization Weights
+### Pretrained Weights
+
+The provided weights include the pretrained student encoder and the document localization model weights for inference.
 
 Google Drive: [weight](https://drive.google.com/file/d/1_A9ZbHKEFdZMkZGHRNJ0zfek7zX3TPoW/view?usp=sharing).
 
 ### Usage
+
+Before running training or testing, please update the dataset path, output path, and pretrained weight path in the configuration file.
 
 #### 1. Training
 
@@ -89,7 +96,7 @@ python train_net.py
 python demo/demo3.py
 ```
 
-## Citation 
+## Citation 📚 
 If you find this project useful in your research, please consider citing our paper:
 
 ```bibtex
@@ -100,3 +107,5 @@ If you find this project useful in your research, please consider citing our pap
   pages={1234--1245},
   year={2026}
 }
+```
+
