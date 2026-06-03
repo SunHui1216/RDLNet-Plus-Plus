@@ -38,6 +38,22 @@ The dataset includes challenging cases such as low contrast, complex illuminatio
 
 Google Drive: [RWMD-Extended](https://drive.google.com/file/d/1hkHizn_pWpdjDnXO0MKrxfBWgRbcbzAJ/view?usp=sharing).
 
+After downloading RWMD-Extended, the dataset is organized as follows:
+
+```text
+RWMD-Extended/
+├── train_resize/
+│   ├── img/
+│   ├── mask/
+│   └── label_points_resize.json
+└── test_resize/
+    ├── img/
+    ├── mask/
+    └── label_points_resize.json
+```
+
+Here, `img/` contains the resized document images, `mask/` contains the corresponding segmentation masks, and `label_points_resize.json` provides the corner point and category annotations.
+
 ## Knowledge Distillation 📝
 
 ### Requirements
@@ -78,7 +94,7 @@ pip install -r requirements.txt
 
 The provided weights include the pretrained student encoder and the document localization model weights for inference.
 
-Google Drive: [weight](https://drive.google.com/file/d/1_A9ZbHKEFdZMkZGHRNJ0zfek7zX3TPoW/view?usp=sharing).
+Google Drive: [Pretrained weights](https://drive.google.com/file/d/1_A9ZbHKEFdZMkZGHRNJ0zfek7zX3TPoW/view?usp=sharing).
 
 ### Usage
 
@@ -97,6 +113,8 @@ python demo/demo3.py
 ```
 
 ## Citation 📚 
+The official citation will be updated after publication.
+
 If you find this project useful in your research, please consider citing our paper:
 
 ```bibtex
