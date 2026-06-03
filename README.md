@@ -30,7 +30,7 @@ RWMD-Extended is an expanded real-world mobile document dataset containing 2,526
     
 ## RWMD-Extended Dataset
 <p align="center">
-  <img src="Dataset.png" alt="RWMD-Extended" width="800">
+  <img src="Dataset.png" alt="RWMD-Extended" width="700">
 </p>
 RWMD-Extended is an expanded version of the Real-World Mobile Document (RWMD) dataset. It contains 2,526 mobile-captured images from real-world environments, including 517 newly added images and eleven document categories.
 The dataset includes challenging cases such as low contrast, complex illumination, cluttered backgrounds, and ambiguous document boundaries. Each image provides instance-level segmentation masks, category labels, and corner point coordinates for document localization research.
