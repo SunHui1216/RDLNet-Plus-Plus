@@ -42,10 +42,6 @@ This project is built upon SAM 3 and DINOv3. Please install the corresponding en
 - SAM 3: https://github.com/facebookresearch/sam3
 - DINOv3: https://github.com/facebookresearch/dinov3
 
-### Pretrained Student Weights
-
-Baidu Cloud: XXX.
-
 ### Usage
 
 #### 1. Training
@@ -71,7 +67,7 @@ Please install the remaining dependencies using:
 pip install -r requirements.txt
 ```
 
-### Pretrained Document Localization Weights
+### Pretrained Student Weights and Document Localization Weights
 
 Google Drive: [weight](https://drive.google.com/file/d/1_A9ZbHKEFdZMkZGHRNJ0zfek7zX3TPoW/view?usp=sharing).
 
